@@ -32,7 +32,6 @@
 		    				</div>
 							
 							<div class="small-12 medium-12 large-12 cell">
-								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
 								<nav role="navigation">
 		    						<?php joints_footer_links(); ?>
 		    					</nav>

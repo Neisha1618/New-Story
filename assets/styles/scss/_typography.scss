@@ -3,11 +3,54 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
+     /*Tier 1 title */
+    
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
 
+    /*Tier 2 & 3 Tier Titles*/
+    #ecology-container & .tier-title {
+        color: #3C6682;
+        font-family: Montserrat;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    #equity-container & .tier-title {
+        color: #B34B2E;
+        font-family: Montserrat;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    #economy-container & .tier-title {
+        color: #586132;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;        
+    }
 }
 
 h2, .h2 {
-
+    /*Tier 1 description */
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 h3, .h3 {
@@ -23,6 +66,84 @@ h5, .h5 {
 }
 
 h6, .h6 {
+
+}
+
+p1, .p1-d {
+    /*Tiers 2 and 3 descriptions not bold */
+    .ecology-container {
+        color: rgba(65, 70, 112, 0.80);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .equity-container {
+        color: #B34B2E;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal; 
+    }
+
+    .economy-container {
+        color: #586132;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;  
+    }
+}
+
+p2, .p2-d {
+     /*Tiers 2 and 3 descriptions nolded*/
+    .ecology-container {
+        color: #3C6682;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;  
+    }
+
+    .equity-container{
+        color: #B34B2E;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    .economy-container {
+        color: #586132;
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;  
+    }
+   
+    
+}
+
+p1, .p1 {
+     /*About us content grid paragraphs*/
+
+        color: rgba(65, 70, 112, 0.80);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    
+}
+
+p2, .p2 {
 
 }
 

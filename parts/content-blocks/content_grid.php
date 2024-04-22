@@ -1,65 +1,75 @@
-<?php
-$bg = get_sub_field('row_bg');
-$vAlign = get_sub_field('vertical_alignment');
-?>
-<div class="content-block content-grid <?php echo $bg ?>">
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x align-center <?php echo $vAlign ?>">
-           <?php if( have_rows('content') ): while( have_rows('content') ): the_row(); 
-                $layout = get_sub_field('layout');
-            ?>
-            <div class="cell <?php echo $layout ?>">
-                <?php $contentType = get_sub_field('content_type');
-                    if($contentType == 'rich-text') :
-                        $richText = get_sub_field('content');
-                        echo $richText;
-                    elseif($contentType == 'embed') :
-                        $embed = get_sub_field('embed');
-                        echo '<div class="embed flex-video">';
-                        echo $embed;
-                        echo '</div>';
-                    elseif($contentType == 'image') :
-                        $imageobject = get_sub_field('image');
-                        if( !empty($imageobject) ):
-                        echo '<img alt="' . $imageobject['title'] . '" src="' . $imageobject['sizes']['medium'] . '" srcset="' . $imageobject['sizes']['medium_large'] .' '. $imageobject['sizes']['medium_large-width'] .'w, '. $imageobject['sizes']['medium'] .' '.  $imageobject['sizes']['medium-width'] .'w, '. $imageobject['sizes']['thumbnail'] .' '.  $imageobject['sizes']['thumbnail-width'] .'w">';
-                        endif;
-                    elseif($contentType == 'nested') :
-                        echo '<div class="grid-x grid-padding-x">';
-                        if( have_rows('nested_grid') ): 
-                            while( have_rows('nested_grid') ): the_row(); 
-                                $nestedLayout = get_sub_field('layout');
-                                $nestedContent = get_sub_field('content');
-                                echo '<div class="cell small-6 ' . $nestedLayout . ' ">';
-                                    echo $nestedContent;
-                                echo '</div>';
-                            endwhile;
-                        endif;
-                        echo '</div>';
-                    elseif($contentType == 'accordion') :
-                        if( have_rows('accordion') ): 
-                            echo '<ul class="accordion" data-accordion>';
-                            while( have_rows('accordion') ): the_row(); 
-                            $title = get_sub_field('title');
-                            $content = get_sub_field('content');
-                                echo '<li class="accordion-item" data-accordion-item>';
-                                    echo '<a href="#" class="accordion-title">Accordion 1</a>';
-                                    echo '<div class="accordion-content" data-tab-content>';
-                                        echo $content;
-                                    echo '</div>';
-                                echo '</li>';
-                            endwhile; 
-                            echo '</ul>';
-                        endif;
-                    elseif($contentType == 'html') :
-                        $html = get_sub_field('custom_html');
-                        echo $html;
-                    elseif($contentType == 'space') :
-                        $size = get_sub_field('space');
-                        echo '<div class="spacer ' . $size . '"></div>';
-                    endif;
-                ?>
-            </div>
-            <?php endwhile; endif; ?>
-        </div>
+<div class="content-grid" id="content-grid">
+    <div class="about-container" id="about-container">
+        <?php if (have_rows('content_grid')): ?>
+            <?php while (have_rows('content_grid')):
+                the_row();
+
+                if (have_rows('about_us_our_mission')):
+                    while (have_rows('about_us_our_mission')):
+                        the_row();
+                        $missionImage = get_sub_field('mission_image');
+                        $missionTitle = get_sub_field('our_mission_title');
+                        $missionSubTitle = get_sub_field('our_mission_subtitle');
+                        $missionBody = get_sub_field('our_mission_body'); ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+                <?php if (have_rows('about_us_our_vision')): ?>
+                    <?php while (have_rows('about_us_our_vision')):
+                        the_row();
+                        $visionTitle = get_sub_field('our_vision_title');
+                        $visionSubTitle = get_sub_field('our_vision_subtitle');
+                        $visionBody = get_sub_field('our_vision_body');
+                        $visionImage = get_sub_field('vision_image');
+                        ?>
+
+                        <div class="grid-container">
+                            <div id="our-mission" class="our-mission">
+                                <div class="grid-x grid-padding-x align-center">
+                                    <div class="small-6 cell">
+                                        <?php echo wp_get_attachment_image($missionImage, 'small'); ?>
+                                    </div>
+                                    
+                                    <div class="small-6 cell right-row">
+                                        <?php echo $missionTitle; ?>
+                                        <?php echo $missionSubTitle; ?>
+                                        <?php echo $missionBody; ?>
+                                        <button id="donate-button">
+                                        Donate
+                                        </button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                        </div>
+
+
+                        <div class="grid-container">
+                            <div class='our-vision' id='our-vision'>
+                                <div class="grid-x grid-padding-x align-center">
+                                    <div class="small-6 cell">
+                                        <?php echo $visionTitle; ?>
+                                        <?php echo $visionSubTitle; ?>
+                                        <?php echo $visionBody; ?>
+                                        <button id="contact-button">Contact</button>
+                                    </div>
+                                    <div class="small-6 cell right-row">
+                                        <?php echo wp_get_attachment_image($visionImage, 'small'); ?>
+                                       
+                                    </div>
+                                </div>
+                            
+                               
+                            </div>
+                        </div>
+
     </div>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
+        <?php endwhile; ?>
+    <?php endif; ?>
+
+
 </div>

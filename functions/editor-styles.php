@@ -21,7 +21,7 @@ function my_mce_before_init( $settings ) {
         )
         ,array(
             'title' => 'H2 Style'
-            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'selector' => 'p1, p2, ul, span, a, h1, h2, h3, h4, h5, h6'
             ,'classes' => 'h2'
         )
         ,array(
@@ -43,6 +43,22 @@ function my_mce_before_init( $settings ) {
             'title' => 'H6 Style'
             ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
             ,'classes' => 'h6'
+        ),array(
+            'title' => 'P1-dial Style'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'p1-d'
+        ),array(
+            'title' => 'P2-dial Style'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'p2-d'
+        ),array(
+            'title' => 'P1'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'p1'
+        ),array(
+            'title' => 'P2'
+            ,'selector' => 'p, ul, span, a, h1, h2, h3, h4, h5, h6'
+            ,'classes' => 'p2'
         )
     );
     $settings['style_formats'] = json_encode( $style_formats );

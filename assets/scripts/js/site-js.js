@@ -30,8 +30,28 @@
     
 })(jQuery);
 
-$(document).ready(function(){
-  $('.content-slider-container').slick({
-
-  });
+// Swiper JS Intialize
+const swiper = new Swiper('.swiper', {
+  spaceBetween: 30,
+  // grid: {
+  //   rows: 2,
+  // },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
+
+// Get all of the swipers on the page
+
+
+
+// $(document).ready(function(){
+//   $('.content-slider-container').slick({
+
+//   });
+// });

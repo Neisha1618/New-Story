@@ -6,6 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
+<img src="<?php echo file_get_contents("assets/images/src/Group-34.png"); ?>"></img>
 <?php
 /**
  * The template for displaying all pages
@@ -27,6 +28,15 @@ if ($imageID) {
 
 
 
+</body>
+
+
+
+
+
+
+
+
 <div id="content" class="content">
 
     <div class="inner-content">
@@ -39,7 +49,8 @@ if ($imageID) {
 							<div class="medium-10 grid-x grid-padding-x align-middle">
 								<div class="medium-6 cell">
                                 <header>
-                                    <h1 style="color:green">The People</h1>
+                                   
+                                   
                                 </header>
 							    </div>
                             </div>	
@@ -48,6 +59,7 @@ if ($imageID) {
 				</div>
            </div>
             
+
           
             <?php get_template_part('parts/content-blocks/dial'); ?>
             <?php get_template_part('parts/content-blocks/content_grid'); ?>
@@ -74,8 +86,19 @@ if ($imageID) {
 
         <?php get_template_part('parts/content-blocks/light-reading-block'); ?>
 
+<div id="form-container">
+    <div id="gravityFormPopup">
+        <?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
+    </div>
+</div>
+        
+
     </div> <!-- end #inner-content -->
-    <?php get_footer(); ?>
+    <?php $footerText = get_field('footer_text') ?>
+
+    <?php get_footer(null, $footerText); ?>
+
+    
     </div> <!-- end #content -->
     <?php wp_link_pages(); ?>
     <div id="logo-footer">

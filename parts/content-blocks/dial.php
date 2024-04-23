@@ -14,7 +14,7 @@ if (isset($_GET['ecology-btn'])) {
 
 <div class="dial-container" id="dial-container">
     
-    <div class="dial-button-container" id="dial-button-container" color="red">
+    <div class="dial-button-container" id="dial-button-container">
 
         <button id="ecology-btn" class="<?php echo $buttonClicked === 'ecology-btn' ? 'highlighted' : ""; ?>“><a href="
             ?ecology-btn">Ecology Button</a></button>
@@ -34,7 +34,7 @@ if (isset($_GET['ecology-btn'])) {
                 ?>
             </div>
         
-            <div id="equity-description">
+            <div id="equity-description" <?php if($buttonClicked) ?> >
                 <img src="assets/images/src/Group-36.png" alt="should be balance" />
                 <?php
                 $equity_description = get_field('equity_description');
@@ -42,7 +42,7 @@ if (isset($_GET['ecology-btn'])) {
                 ?>
             </div>
         
-            <div id="economy-description">
+            <div <?php if($buttonClicked) ?> id="economy-description">
                 <img src="assets/images/src/Group-38.png" alt="should be money" />
                 <?php
                 $economy_description = get_field('economy_description');

@@ -39,6 +39,29 @@
 						
 						</div> <!-- end #inner-footer -->
 					</div>
+					<div>
+						<?php $footerText= get_field('footer_text', 'option'); 
+						 echo $footerText;
+						?>
+					</div>
+					<button id="openPopupBtn">Signup</button>
+					
+					<div class="reveal" id="exampleModal1" data-reveal>
+ 
+		<div id="form-container">
+			
+				<div id="gravityFormPopup">
+					<?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
+				</div>
+			
+		</div>
+
+		<button class="close-button" data-close aria-label="Close modal" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		</div>
+
+<p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
 				</footer> <!-- end .footer -->
 			
 			</div>  <!-- end .off-canvas-content -->

@@ -86,12 +86,6 @@ if ($imageID) {
 
         <?php get_template_part('parts/content-blocks/light-reading-block'); ?>
 
-<div id="form-container">
-    <div id="gravityFormPopup">
-        <?php echo do_shortcode('[gravityform id="3" title="true"]'); ?>
-    </div>
-</div>
-        
 
     </div> <!-- end #inner-content -->
     <?php $footerText = get_field('footer_text') ?>

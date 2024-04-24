@@ -45,3 +45,21 @@
   }
 }
 
+#tier-2-3-containers {
+  &.ecology {
+    #equity-container, #economy-container {
+      display: none;
+    }
+  }
+  &.equity {
+    #ecology-container, #economy-container {
+      display: none;
+    }
+  }
+  &.economy {
+    #equity-container, #ecology-container {
+      display: none;
+    }
+  }
+}
+

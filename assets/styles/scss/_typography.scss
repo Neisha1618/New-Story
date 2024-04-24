@@ -11,35 +11,6 @@ h1, .h1 {
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-
-    /*Tier 2 & 3 Tier Titles*/
-    #ecology-container & .tier-title {
-        color: #3C6682;
-        font-family: Montserrat;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: normal;
-    }
-
-    #equity-container & .tier-title {
-        color: #B34B2E;
-        font-family: Montserrat;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: normal;
-    }
-
-    #economy-container & .tier-title {
-        color: #586132;
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: normal;        
-    }
 }
 
 h2, .h2 {

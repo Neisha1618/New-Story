@@ -3,7 +3,6 @@
 // Check which button is clicked and set a variable accordingly
 $buttonClicked = '';
 
-$highlighted = 'delete-me-later';
 
 if (isset($_GET['ecology-btn'])) {
     $buttonClicked = 'ecology-btn';
@@ -57,6 +56,9 @@ if (isset($_GET['ecology-btn'])) {
 
 
 </div>
+
+<div class="tier-2-3-containers ecology" id="tier-2-3-containers">
+
 <div id="ecology-container" class="ecology-container ecology-btn">
 
     <?php if (have_rows('ecology_tier_2')): ?>
@@ -186,11 +188,8 @@ if (isset($_GET['ecology-btn'])) {
 
 </div>
 
+</div>
 
-
-
-   
-    // Add event listeners to the buttons to dynamically update their classes
 
    
 
@@ -198,14 +197,17 @@ if (isset($_GET['ecology-btn'])) {
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('ecology-btn').addEventListener('click', function () {
             document.getElementById("dial-container").classList = "dial-container ecology";
+            document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers ecology";
         });
 
         document.getElementById('equity-btn').addEventListener('click', function () {
             document.getElementById("dial-container").classList = "dial-container equity";
+            document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers equity";
         });
 
         document.getElementById('economy-btn').addEventListener('click', function () {
             document.getElementById("dial-container").classList = "dial-container economy";
+            document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers economy";
         });
     });
 </script>

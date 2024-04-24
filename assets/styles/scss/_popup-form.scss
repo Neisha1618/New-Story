@@ -1,6 +1,4 @@
 div#form-container {
-    background: red;
-
     #gravityFormPopup {
         flex-shrink: 0;
         position: center;
@@ -15,7 +13,5 @@ div#form-container {
 .reveal-overlay {
     background: rgba(147, 147, 147, 0.42);
     backdrop-filter: blur(12px);
-    height: 100vh;
-
 }
 

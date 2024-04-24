@@ -1,10 +1,12 @@
 <?php
+
 // Check which button is clicked and set a variable accordingly
 $buttonClicked = '';
 
+$highlighted = 'delete-me-later';
+
 if (isset($_GET['ecology-btn'])) {
     $buttonClicked = 'ecology-btn';
-
 } elseif (isset($_GET['equity-btn'])) {
     $buttonClicked = 'equity-btn';
 } elseif (isset($_GET['economy-btn'])) {
@@ -12,38 +14,36 @@ if (isset($_GET['ecology-btn'])) {
 }
 ?>
 
-<div class="dial-container" id="dial-container">
+<div class="dial-container ecology" id="dial-container">
     
     <div class="dial-button-container" id="dial-button-container">
-
-        <button id="ecology-btn" class="<?php echo $buttonClicked === 'ecology-btn' ? 'highlighted' : ""; ?>“><a href="
-            ?ecology-btn">Ecology Button</a></button>
-        <button id="equity-btn" class="<?php echo $buttonClicked === 'equity-btn' ? 'highlighted' : ""; ?>“><a href="
-            ?equity-btn">Equity Button</a></button>
-        <button id="economy-btn" class="<?php echo $buttonClicked === 'economy-btn' ? 'highlighted' : ""; ?>“><a href="
-            ?economy-btn">Economy Button</a></button>
+       
+        <button id="equity-btn" class="equity-btn">Equity</button>
+        <button id="ecology-btn" class="ecology-btn">Ecology</button>
+        <button id="economy-btn" class="economy-btn">Economy</button>
         <!-- html for conditional render of dial's-->
 
 
         <div class="tier-1-description" id="tier-1-description">
             <div id="ecology-description">
-            <img src="assets/images/src/Group-34.png" alt="should be a hand"  />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/src/Group-34.png" alt="Descriptive"/>
+
                 <?php
                 $ecology_description = get_field('ecology_description');
                 echo $ecology_description;
                 ?>
             </div>
         
-            <div id="equity-description" <?php if($buttonClicked) ?> >
-                <img src="assets/images/src/Group-36.png" alt="should be balance" />
+            <div id="equity-description">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/src/Group-36.png" alt="Descriptive"/>
                 <?php
                 $equity_description = get_field('equity_description');
                 echo $equity_description;
                 ?>
             </div>
         
-            <div <?php if($buttonClicked) ?> id="economy-description">
-                <img src="assets/images/src/Group-38.png" alt="should be money" />
+            <div id="economy-description">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/src/Group-38.png" alt="Descriptive"/>
                 <?php
                 $economy_description = get_field('economy_description');
                 echo $economy_description;
@@ -189,50 +189,26 @@ if (isset($_GET['ecology-btn'])) {
 
 
 
-<script>
-    // Function to remove the 'highlighted' class from all buttons
-    function removeHighlight() {
-        const buttons = document.querySelectorAll('button'); // Get all buttons
-        buttons.forEach(button => {
-            button.classList.remove('highlighted'); // Remove the 'highlighted' class from each button
-        });
-    }
+   
     // Add event listeners to the buttons to dynamically update their classes
 
-    document.getElementById('ecology-btn').addEventListener('click', function () {
-        removeHighlight();
-        this.classList.add('highlighted'); // Add the class 'highlighted' to the clicked button
-        //show the dial containers whose button is highlighte, and hide the others
-        document.getElementById("ecology-container").style.display = "inline";
-        document.getElementById("equity-container").style.display = "none";
-        document.getElementById("economy-container").style.display = "none";
-        document.getElementById("ecology-description").style.display = "inline";
-        document.getElementById("equity-description").style.display = "none";
-        document.getElementById("economy-description").style.display = "none";
+   
 
-    });
-    document.getElementById('equity-btn').addEventListener('click', function () {
-        removeHighlight();
-        this.classList.add('highlighted'); // Add the class 'highlighted' to the clicked button
-        //show the dial containers whose button is highlighte, and hide the others
-        document.getElementById("equity-container").style.display = "inline";
-        document.getElementById("ecology-container").style.display = "none";
-        document.getElementById("economy-container").style.display = "none";
-        document.getElementById("ecology-description").style.display = "none";
-        document.getElementById("equity-description").style.display = "inline";
-        document.getElementById("economy-description").style.display = "none";
-    });
-    document.getElementById('economy-btn').addEventListener('click', function () {
-        removeHighlight();
-        this.classList.add('highlighted'); // Add the class 'highlighted' to the clicked button
-        //show the dial containers whose button is highlighte, and hide the others
-        document.getElementById("economy-container").style.display = "inline";
-        document.getElementById("equity-container").style.display = "none";
-        document.getElementById("ecology-container").style.display = "none";
-        document.getElementById("ecology-description").style.display = "none";
-        document.getElementById("equity-description").style.display = "none";
-        document.getElementById("economy-description").style.display = "inline";
-    });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('ecology-btn').addEventListener('click', function () {
+            document.getElementById("dial-container").classList = "dial-container ecology";
+        });
 
+        document.getElementById('equity-btn').addEventListener('click', function () {
+            document.getElementById("dial-container").classList = "dial-container equity";
+        });
 
+        document.getElementById('economy-btn').addEventListener('click', function () {
+            document.getElementById("dial-container").classList = "dial-container economy";
+        });
+    });
 </script>
+
+
+

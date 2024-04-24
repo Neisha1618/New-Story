@@ -1,6 +1,4 @@
-#dial-container {
-	background-color: #3C6682;
-}
+
 
 #tier-1-description {
   max-width: 489px;
@@ -18,3 +16,32 @@
 	margin-right: auto;
 	flex-shrink: 0;
   }
+
+#dial-container.dial-container {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  &.ecology {
+    background-color: #3C6682;
+    #equity-description, #economy-description {
+      display: none;
+    }
+
+  }
+  &.equity {
+    background-color: #B34B2E;
+    #ecology-description, #economy-description {
+      display: none;
+    }
+
+  }
+  &.economy {
+    background-color: #586132;
+    #equity-description, #ecology-description {
+      display: none;
+    }
+  }
+}
+

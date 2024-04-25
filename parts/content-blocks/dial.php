@@ -37,10 +37,11 @@ if (isset($_GET['ecology-btn'])) {
 
     
     <div class="dial-button-container" id="dial-button-container">
-       
-        <button id="equity-btn" class="equity-btn">Equity</button>
         <button id="ecology-btn" class="ecology-btn">Ecology</button>
         <button id="economy-btn" class="economy-btn">Economy</button>
+        <button id="equity-btn" class="equity-btn">Equity</button>
+        
+        
         <!-- html for conditional render of dial's-->
 
 
@@ -216,23 +217,37 @@ if (isset($_GET['ecology-btn'])) {
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const equityBtn = document.getElementById('equity-btn');
+        const ecologyBtn = document.getElementById('ecology-btn');
+        const economyBtn = document.getElementById('economy-btn');
+        ecologyBtn.style.display = 'none';
         //change the path color of the dial-image
         const dialSvg = document.getElementById('dial-svg');
         const dialPath = dialSvg.querySelector('path');
         
-        document.getElementById('ecology-btn').addEventListener('click', function () {
+        ecologyBtn.addEventListener('click', function () {
+            this.style.display = 'none';
+            economyBtn.style.display = 'inline';
+            equityBtn.style.display = 'inline';
+            
             document.getElementById("dial-container").classList = "dial-container ecology";
             document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers ecology";
             dialPath.setAttribute('fill', '#3C6682');
         });
 
-        document.getElementById('equity-btn').addEventListener('click', function () {
+        equityBtn.addEventListener('click', function () {
+            this.style.display = 'none';
+            ecologyBtn.style.display = 'inline';
+            economyBtn.style.display = 'inline';
             document.getElementById("dial-container").classList = "dial-container equity";
             document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers equity";
             dialPath.setAttribute('fill', '#F15623');
         });
 
-        document.getElementById('economy-btn').addEventListener('click', function () {
+        economyBtn.addEventListener('click', function () {
+            this.style.display = 'none';
+            equityBtn.style.display = 'inline';
+            ecologyBtn.style.display = 'inline';
             document.getElementById("dial-container").classList = "dial-container economy";
             document.getElementById("tier-2-3-containers").classList = "tier-2-3-containers economy";
             dialPath.setAttribute('fill', '#90A34A');

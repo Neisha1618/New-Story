@@ -1,9 +1,32 @@
 
 
 #tier-1-description {
-  max-width: 489px;
   margin-left: auto;
   margin-right: auto;
+  color: #FFF;
+text-align: center;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+  & #ecology-description {
+    width: 489px;
+  height: 187px;
+  flex-shrink: 0;
+  }
+  & #equity-description {
+  width: 483px;
+  height: 159px;
+  flex-shrink: 0;
+  }
+  & #economy-description {
+    width: 603px;
+    height: 159px;
+    flex-shrink: 0;
+  }
+
 }
 #tier-2-container {
   max-width: 753px;

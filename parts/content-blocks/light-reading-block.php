@@ -2,7 +2,7 @@
 
     <div class="grid-container">
         <div class="grid-x grid-padding-x align-center">
-            <div class="small-6 cell">
+            <div class=" book-image-container small-6 cell">
                 <?php
                 $bookImage = get_field('book_image');
                 $size = 'medium';
@@ -10,7 +10,7 @@
                     echo wp_get_attachment_image($bookImage, $size);
                 } ?>
             </div>
-            <div class="small-6 cell right-row">
+            <div class="book-info-container small-6 cell right-row">
                 <h1 class="reading-header" id="reading-header">
                     <? echo $header = get_field('light_reading_header'); ?>
                 </h1>

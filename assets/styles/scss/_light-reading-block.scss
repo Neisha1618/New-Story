@@ -11,4 +11,17 @@
     font-weight: 800;
     line-height: normal;
 }
+
+.book-image-container{
+    width: 306px;
+    height: 308px;
+    flex-shrink: 0; 
+}
+
+.book-info-container{
+    width: 610.531px;
+    height: 162px;
+    flex-shrink: 0;  
+}
+
 }

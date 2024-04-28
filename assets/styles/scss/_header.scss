@@ -47,3 +47,24 @@ background: #F15623;
 	}
 }
 
+.hero-title {
+    position: relative;
+	width: 784px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -132%);
+    font-size: 24px; 
+	color: #F6F4F4;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: normal;
+}
+
+.title-svg {
+	width: 197.133px;
+height: 63.116px;
+flex-shrink: 0;
+}
+
